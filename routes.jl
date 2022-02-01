@@ -54,4 +54,4 @@ route("/v1/novoCPF", method = "POST") do
     
 end
 
-Genie.startup()
+up(parse(Int64, ENV["PORT"]), "0.0.0.0" ,async = false)

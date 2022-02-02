@@ -1,5 +1,4 @@
 function get_bankStatement(cpf)
-    
     bank_statement = HTTP.get("https://tarry-malachite-divan.glitch.me/cpf/$cpf")
     
     dateFormat = DateFormat("y-m-d")
@@ -23,10 +22,9 @@ function get_bankStatement(cpf)
         paymentDateToTodayDateComparison = (todaysDate - paymentDate)
         paymentDateToTodayDateComparison = parse(Int64, string(paymentDateToTodayDateComparison)[1:2])
         
-        lastMonth["pagamentos"][i]["valor"] = string(lastMonth["pagamentos"][i]["valor"])
-        lastMonthDict["saldo"] += parse(Float64, lastMonth["pagamentos"][i]["valor"])
-        
         if paymentDateToTodayDateComparison <= 30
+            lastMonth["pagamentos"][i]["valor"] = string(lastMonth["pagamentos"][i]["valor"])
+            lastMonthDict["saldo"] += parse(Float64, lastMonth["pagamentos"][i]["valor"])
             append!(lastMonthDict["pagamentos"], [lastMonth["pagamentos"][i]])
         end
     end

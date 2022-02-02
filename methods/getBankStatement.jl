@@ -1,7 +1,3 @@
-import JSON, HTTP
-
-using Genie, Dates
-
 function get_bankStatement(cpf)
     
     bank_statement = HTTP.get("https://tarry-malachite-divan.glitch.me/cpf/$cpf")
@@ -38,5 +34,3 @@ function get_bankStatement(cpf)
     return JSON.json(lastMonthDict)
         
 end
-
-get_bankStatement(13663922228)

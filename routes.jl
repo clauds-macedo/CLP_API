@@ -23,11 +23,9 @@ end
 
 route("/v1/extrato/", method = "GET") do
     
-    cpf = params(:cpf, "")
+    cpf = params(:cpf, 0)
     
-    if cpf == ""
-        return "Parâmetro CPF vazio"
-    elseif doCPFexists(cpf)
+    if doCPFexists(cpf)
         return get_bankStatement(cpf)
     end
     

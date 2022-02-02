@@ -10,7 +10,7 @@ function get_bankStatement(cpf)
     
     lastMonthDict = Dict{String, Any}(
             "name" => lastMonth["name"],
-            "id" => lastMonth["id"],
+            "id" => parse(Int64, lastMonth["id"]),
             "saldo" => saldo,
             "pagamentos" => []
     )

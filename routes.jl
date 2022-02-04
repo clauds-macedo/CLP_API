@@ -16,6 +16,7 @@ include("methods/getBankStatement.jl")
 include("methods/addPayment.jl")
 include("methods/verifyCPFexistence.jl")
 include("methods/postNewCPF.jl")
+include("methods/getPaymentByMonth.jl")
 
 route("/") do
     return "Conectado com sucesso"
@@ -29,6 +30,13 @@ route("/v1/extrato/", method = "GET") do
         return get_bankStatement(cpf)
     end
     
+end
+
+route("/v1/extrato_mes", method = "GET") do 
+    
+    cpf = params(:cpf, 0)
+    mes = params(:cpf, 0)
+
 end
 
 route("/v1/addPagamento", method = "PUT") do

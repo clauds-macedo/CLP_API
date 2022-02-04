@@ -35,7 +35,8 @@ end
 route("/v1/extrato_mes", method = "GET") do 
     
     cpf = params(:cpf, 0)
-    mes = params(:cpf, 0)
+    
+    return getPaymentByMonth(cpf)
 
 end
 

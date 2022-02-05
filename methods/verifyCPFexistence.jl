@@ -16,5 +16,3 @@ function doCPFexists(cpf)
     return cpfExists
     
 end
-
-doCPFexists("13663922222")

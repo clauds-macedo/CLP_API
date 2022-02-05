@@ -44,7 +44,7 @@ end
 route("/v1/extrato_anual", method = "GET") do
     
     cpf = params(:cpf, 0)
-    return getAnnualStatement(cpf)
+    return getPaymentByYear(cpf)
 
 end
 
